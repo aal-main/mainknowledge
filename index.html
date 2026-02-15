@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's learn together</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    <style>
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+                opacity: 0.9;
+            }
+        }
+        
+        @keyframes float-reverse {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-40px) rotate(-10deg);
+                opacity: 0.9;
+            }
+        }
+        
+        @keyframes float-slow {
+            0%, 100% {
+                transform: translateY(0px);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-35px);
+                opacity: 0.8;
+            }
+        }
+        
+        .float-element {
+            font-size: 3rem;
+            position: absolute;
+            pointer-events: none;
+        }
+        
+        .float-1 { animation: float 6s ease-in-out infinite; }
+        .float-2 { animation: float-reverse 7s ease-in-out infinite; }
+        .float-3 { animation: float-slow 8s ease-in-out infinite; }
+        .float-4 { animation: float 7.5s ease-in-out infinite; }
+        .float-5 { animation: float-reverse 6.5s ease-in-out infinite; }
+        .float-6 { animation: float-slow 7s ease-in-out infinite; }
+        /* Hide floating elements on small screens to improve performance and clarity */
+        @media (max-width: 639px) {
+            .float-element { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="image/logo.png" alt="Logo" class="h-10 w-10">
+                <h1 class="text-2xl font-bold">MainKnowledge</h1>
+            </div>
+            <ul class="hidden md:flex gap-8 font-semibold">
+                <li><a href="#home" class="hover:text-blue-200 transition">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-200 transition">Myself</a></li>
+                <li><a href="#services" class="hover:text-blue-200 transition">Teaching areas</a></li>
+                <li><a href="#info" class="hover:text-blue-200 transition">Fees & Location</a></li>
+                <li><a href="#contact" class="hover:text-blue-200 transition">Contact</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="md:hidden text-2xl" aria-label="Toggle menu">☰</button>
+            <div id="mobile-menu" class="md:hidden hidden absolute right-4 top-20 bg-white rounded-lg shadow-lg w-56 z-50">
+                <ul class="flex flex-col p-2">
+                    <li><a href="#home" class="block px-4 py-3 text-blue-600 hover:bg-blue-50 rounded">Home</a></li>
+                    <li><a href="#about" class="block px-4 py-3 text-blue-600 hover:bg-blue-50 rounded">About Me</a></li>
+                    <li><a href="#services" class="block px-4 py-3 text-blue-600 hover:bg-blue-50 rounded">Teaching Areas</a></li>
+                    <li><a href="#info" class="block px-4 py-3 text-blue-600 hover:bg-blue-50 rounded">Fees & Location</a></li>
+                    <li><a href="#contact" class="block px-4 py-3 text-blue-600 hover:bg-blue-50 rounded">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20 relative overflow-hidden">
+        <!-- Floating Elements -->
+        <div class="float-element float-1" style="top: 10%; right: 15%;">∑</div>
+        <div class="float-element float-2" style="top: 30%; left: 5%; font-size: 2.5rem;">π</div>
+        <div class="float-element float-3" style="top: 60%; right: 10%;">√</div>
+        <div class="float-element float-4" style="top: 40%; right: 25%;">⚛️</div>
+        <div class="float-element float-5" style="top: 15%; left: 10%;">🧪</div>
+        <div class="float-element float-6" style="top: 65%; left: 8%;">💻</div>
+        <div class="float-element float-1" style="top: 50%; right: 5%;">×</div>
+        <div class="float-element float-2" style="top: 25%; right: 35%;">🔬</div>
+        <div class="float-element float-3" style="top: 70%; right: 20%;">⌨️</div>
+        <div class="float-element float-4" style="top: 35%; left: 15%; font-size: 2.5rem;">÷</div>
+        
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-6xl font-bold mb-2">Master Mathematics, Science & ICT</h2>
+                <p class="text-lg md:text-3xl font-semibold text-blue-100 mb-6">Learn Smart, Grow Faster, Succeed Beyond Limits</p>
+                <p class="text-base md:text-lg mb-8 leading-relaxed">Expert home tutoring in Mathematics, Science, and Information Communication Technology. Transform complex concepts into simple understanding with personalized guidance tailored to your learning style.</p>
+                
+                <!-- SSC and HSC Buttons - styled like Get Started Today -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <a href="#services" class="block w-full sm:inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition text-center">
+                        📚 SSC
+                    </a>
+                    <a href="#services" class="block w-full sm:inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition text-center">
+                        🎓 HSC
+                    </a>
+                </div>
+                
+                <a href="#contact" class="block w-full sm:inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition text-center">Get Started Today</a>
+            </div>
+            <div class="md:w-1/2 flex flex-col items-center">
+                <img src="image/my image.JPG" alt="Profile" class="w-48 h-48 md:w-96 md:h-96 rounded-full border-8 border-white shadow-2xl object-cover">
+                <div class="mt-6 text-center">
+                    <h3 class="text-base md:text-xl font-bold text-white mb-1">Abdullah Al Main</h3>
+                    <p class="text-xs md:text-sm text-blue-100 mb-1">MSc in Applied Mathematics</p>
+                    <p class="text-xs md:text-sm text-blue-100">University of Chittagong</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-blue-600 mb-4 text-center">About Me</h2>
+            <div class="h-1 w-32 bg-blue-600 mx-auto mb-16"></div>
+            
+            <!-- Introduction Card -->
+            <div class="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-10 rounded-2xl shadow-lg mb-16">
+                <h3 class="text-4xl font-bold mb-4">Abdullah Al Main</h3>
+                <p class="text-xl leading-relaxed mb-4">
+                    I am currently pursuing my MSc in Applied Mathematics at the University of Chittagong. With 6 years of dedicated tutoring experience, I work as a home tutor for SSC and HSC students in Chattagram City.
+                </p>
+                <p class="text-lg text-blue-100">
+                    My educational journey has been one of dedication and purpose. I combine proven teaching methodologies with patient, compassionate instruction to help every student unlock their full potential.
+                </p>
+            </div>
+
+            <!-- Two Column Layout: Education & Teaching Philosophy -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <!-- Left Column: Education -->
+                <div>
+                    <h3 class="text-3xl font-bold text-blue-600 mb-8">Educational Journey</h3>
+                    <div class="space-y-6">
+                        <!-- Timeline Item 1 -->
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 border-3 border-blue-600">
+                                    <span class="text-xl font-bold text-blue-600">1</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-lg">SSC Examination</p>
+                                <p class="text-blue-600 font-semibold">2017</p>
+                                <p class="text-gray-600">Govt. Hazi Ibrahim Alamchan Model School & College</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 2 -->
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 border-3 border-blue-600">
+                                    <span class="text-xl font-bold text-blue-600">2</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-lg">HSC Examination</p>
+                                <p class="text-blue-600 font-semibold">2019</p>
+                                <p class="text-gray-600">Govt. Tolaram College</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 3 -->
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 border-3 border-blue-600">
+                                    <span class="text-xl font-bold text-blue-600">3</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-lg">Bachelor of Science in Mathematics (Honours)</p>
+                                <p class="text-blue-600 font-semibold">2025</p>
+                                <p class="text-gray-600">University of Chittagong</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 4 -->
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-blue-500 border-3 border-blue-500">
+                                    <span class="text-xl font-bold text-white">4</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-lg">Master of Science in Applied Mathematics</p>
+                                <p class="text-blue-600 font-semibold">In Progress</p>
+                                <p class="text-gray-600">University of Chittagong</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Philosophy & Strengths -->
+                <div class="space-y-6">
+                    <!-- Teaching Philosophy Card -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-blue-600">
+                        <h3 class="text-2xl font-bold text-blue-600 mb-4">My Teaching Philosophy</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            I believe that every student has the potential to excel. My approach focuses on making complex concepts simple and relatable, ensuring that learning becomes an enjoyable journey rather than a burden.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            I tailor my teaching methods to each student's learning style, providing personalized attention and constructive feedback to foster confidence and independent thinking.
+                        </p>
+                    </div>
+
+                    <!-- Key Strengths Card -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg border-t-4 border-blue-600">
+                        <h3 class="text-2xl font-bold text-blue-600 mb-4">Key Strengths</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="text-blue-600 font-bold text-xl">✓</span>
+                                <span class="text-gray-700 font-semibold">Patient & compassionate approach</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-blue-600 font-bold text-xl">✓</span>
+                                <span class="text-gray-700 font-semibold">Expert in Mathematics & Science</span>
+                            </li>
+                            
+                            <li class="flex items-center gap-3">
+                                <span class="text-blue-600 font-bold text-xl">✓</span>
+                                <span class="text-gray-700 font-semibold">Flexible & adaptable teaching</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-blue-600 font-bold text-xl">✓</span>
+                                <span class="text-gray-700 font-semibold">Strong educational foundation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience & Expertise Highlight -->
+            <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-12 rounded-2xl shadow-lg">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-6xl font-bold text-blue-600 mb-3">6+</div>
+                        <p class="text-gray-700 font-semibold text-lg">Years of Experience</p>
+                        <p class="text-gray-600 text-sm mt-2">Dedicated tutoring expertise</p>
+                    </div>
+                    <div>
+                        <div class="text-6xl font-bold text-blue-600 mb-3">100%</div>
+                        <p class="text-gray-700 font-semibold text-lg">Improve Rate</p>
+                        <p class="text-gray-600 text-sm mt-2">Success stories across all levels</p>
+                    </div>
+                    <div>
+                        <div class="text-6xl font-bold text-blue-600 mb-3">STEM</div>
+                        <p class="text-gray-700 font-semibold text-lg">Subject Expert</p>
+                        <p class="text-gray-600 text-sm mt-2">Diverse academic expertise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Teaching Areas Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-blue-600 mb-4 text-center">Teaching Areas</h2>
+            <div class="h-1 w-32 bg-blue-600 mx-auto mb-16"></div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- SSC Section -->
+                <div class="bg-white p-10 rounded-2xl shadow-lg hover:shadow-2xl transition border-l-4 border-blue-600">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="text-5xl">📚</div>
+                        <h3 class="text-3xl font-bold text-blue-600">SSC Students</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 font-semibold">Comprehensive coaching for all major subjects</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">🔢</span>
+                            <span class="text-gray-700 font-semibold">Mathematics</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">🔢</span>
+                            <span class="text-gray-700 font-semibold">Higher Mathematics</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">⚛️</span>
+                            <span class="text-gray-700 font-semibold">Physics</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">🧪</span>
+                            <span class="text-gray-700 font-semibold">Chemistry</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">🧬</span>
+                            <span class="text-gray-700 font-semibold">Biology</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">🔬</span>
+                            <span class="text-gray-700 font-semibold">General Science</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">💻</span>
+                            <span class="text-gray-700 font-semibold">ICT</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-8 border-t-2 border-gray-200">
+                        <p class="text-blue-600 font-bold text-lg">7 Subjects Available</p>
+                    </div>
+                </div>
+
+                <!-- HSC Section -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition border-l-4 border-green-500">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="text-5xl">🎓</div>
+                        <h3 class="text-3xl font-bold text-blue-600">HSC Students</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 font-semibold">Specialized tutoring for advanced level studies</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">🔢</span>
+                            <span class="text-gray-700 font-semibold">Higher Mathematics</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <span class="text-2xl text-blue-600">💻</span>
+                            <span class="text-gray-700 font-semibold">ICT</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-8 border-t-2 border-blue-300 space-y-3">
+                        <p class="text-blue-600 font-bold text-lg">2 Subjects Available</p>
+                        <p class="text-gray-600 text-sm">Expert guidance in advanced mathematics and information technology</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="mt-12 bg-gradient-to-r from-blue-600 to-blue-500 text-white p-10 rounded-2xl shadow-lg text-center">
+                <h3 class="text-2xl font-bold mb-3">Personalized Learning Experience</h3>
+                <p class="text-blue-100">Every lesson is tailored to your learning pace and style. I provide comprehensive support from fundamentals to advanced concepts with proven teaching methodologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location, Pricing & Contact Section -->
+    <section id="info" class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-blue-600 mb-4 text-center">Fees and Location</h2>
+            <div class="h-1 w-32 bg-blue-600 mx-auto mb-16"></div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Location Card -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-blue-600">
+                    <div class="text-5xl mb-4 text-center">📍</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-6 text-center">Current Location</h3>
+                    <div class="space-y-4 text-center">
+                        <p class="text-gray-700 font-semibold text-lg">Chattagram City</p>
+                        <p class="text-gray-600">2no. gate area</p>
+                        <p class="text-gray-600 text-sm">Additional distance near 2no. gate is acceptable</p>
+                        <div class="mt-6 pt-6 border-t-2 border-gray-200">
+                            <p class="text-blue-600 font-semibold text-sm">🚩 Flexible Service Area</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Card -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-blue-500">
+                    <div class="text-5xl mb-4 text-center">💰</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-6 text-center">Flexible Fees</h3>
+                    <div class="space-y-4">
+                        <p class="text-gray-700 font-semibold text-center">Fees Vary Based On:</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="text-blue-600 font-bold">✓</span>
+                                <span>Number of subjects</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="text-blue-600 font-bold">✓</span>
+                                <span>Number of students</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="text-blue-600 font-bold">✓</span>
+                                <span>Location</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t-2 border-blue-300">
+                            <p class="text-blue-600 font-semibold text-sm text-center">Contact for Custom Quotes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-blue-600 mb-4 text-center">Get In Touch</h2>
+            <div class="h-1 w-32 bg-blue-600 mx-auto mb-16"></div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <!-- Contact Information -->
+                <div class="bg-white p-10 rounded-2xl shadow-lg">
+                    <h3 class="text-3xl font-bold text-blue-600 mb-8">Contact Information</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="text-4xl text-blue-600">📱</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-lg mb-2">WhatsApp</p>
+                                <p class="text-blue-600 font-semibold text-lg">01517830517</p>
+                                <p class="text-gray-600 text-sm mt-1">Direct messaging available for quick response</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-4xl text-blue-600">💼</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-lg mb-2">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/abdullahalmain/" target="_blank" class="text-blue-600 font-semibold text-lg hover:text-blue-700 hover:underline">Abdullah Al Main</a>
+                                <p class="text-gray-600 text-sm mt-1">Connect professionally for collaborations</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-4xl text-blue-600">📍</div>
+                            <div>
+                                <p class="font-bold text-gray-800 text-lg mb-2">Location</p>
+                                <p class="text-gray-700 font-semibold">Chattagram City, 2No. Gate</p>
+                                <p class="text-gray-600 text-sm mt-1">Available for tutoring near 2No. Gate area</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured CTA -->
+                <div class="bg-gradient-to-br from-blue-600 to-blue-500 text-white p-10 rounded-2xl shadow-lg flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-6">Ready to Transform Your Learning?</h3>
+                    <p class="text-lg text-blue-100 mb-8 leading-relaxed">
+                        Take the first step towards academic excellence. Contact me today for a free consultation and let's create a personalized learning plan tailored to your goals.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <p class="font-semibold text-blue-200 flex items-center gap-2">
+                            <span class="text-2xl">✓</span>
+                            <span>Free Initial Consultation</span>
+                        </p>
+                        <p class="font-semibold text-blue-200 flex items-center gap-2">
+                            <span class="text-2xl">✓</span>
+                            <span>Customized Learning Plans</span>
+                        </p>
+                        <p class="font-semibold text-blue-200 flex items-center gap-2">
+                            <span class="text-2xl">✓</span>
+                            <span>Flexible Scheduling Options</span>
+                        </p>
+                    </div>
+                    <a href="https://wa.me/+8801517830517" target="_blank" class="bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-blue-50 transition text-center">
+                        Message on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2026  All rights reserved.</p>
+            <p class="text-blue-200">Empowering minds, inspiring excellence, transforming futures.</p>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        (function(){
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', function(e){
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            });
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e){
+                if (!menu.classList.contains('hidden') && !menu.contains(e.target) && e.target !== btn) {
+                    menu.classList.add('hidden');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
